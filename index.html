@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jufento Semri Lake</title>
-    <link href="dist/output.css" rel="stylesheet" />
+    <link href="dist/css/final.css" rel="stylesheet" />
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <!-- Header Start  -->
@@ -39,43 +50,68 @@
             <!-- Navbar Start -->
             <nav
               id="nav-menu"
-              class="hidden absolute py-5 bg-white shadow-lg right-4 lg:shadow-none lg:rounded-none rounded-lg max-w-[250px] w-full top-full lg:block lg:static lg:bg-transparent lg:max-w-full"
+              class="dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent hidden absolute py-5 bg-white shadow-lg right-4 lg:shadow-none lg:rounded-none rounded-lg max-w-[250px] w-full top-full lg:block lg:static lg:bg-transparent lg:max-w-full"
             >
               <ul class="block lg:flex">
                 <li class="group">
                   <a
                     href="#home"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                     >Home</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#about"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                     >About Me</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#portfolio"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                     >Portfolio</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#experience"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                     >Experience</a
                   >
                 </li>
                 <li class="group">
                   <a
                     href="#contact"
-                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary"
+                    class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"
                     >Contact</a
                   >
+                </li>
+                <li class="flex items-center pl-8">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500 dark:text-white"
+                      >Light</span
+                    >
+                    <input
+                      type="checkbox"
+                      class="hidden dark:bg-white"
+                      id="dark-toggle"
+                    />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+
+                    <span class="ml-2 text-sm text-slate-500 dark:text-white"
+                      >Dark</span
+                    >
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -87,25 +123,26 @@
     <!-- Header End  -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full self-center px-4 lg:w-1/2">
             <h1 class="text-base font-semibold text-teal-400 md:text-xl">
-              Halo semua 🖐, Saya
-              <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl"
+              Halo semua, Saya
+              <span
+                class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white"
                 >Jufento Semri Lake</span
               >
             </h1>
             <h2 class="font-medium text-secondary text-lg mb-5">
-              Fresh Graduate | Programmer
+              Full Stack Developer
             </h2>
             <p class="text-secondary mb-10 font-medium leading-relaxed">
-              Saya adalah seorang programmer yang terbiasa dalam pengembangan
-              aplikasi berbasis web dan desktop.
+              Saya adalah seorang full stack programmer yang terbiasa dalam
+              pengembangan aplikasi berbasis web dan desktop.
             </p>
             <a
-              href="#"
+              href="#contact"
               class="transition duration-300 ease-in-out text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80"
               >Hubungi Saya</a
             >
@@ -117,10 +154,10 @@
                 height="300"
                 src="dist/img/semry-removebg-preview.png"
                 alt="Semry Lake"
-                class="max-w-full mx-auto"
+                class="max-w-full mx-auto relative z-10"
               />
               <span
-                class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125"
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125"
               >
                 <svg
                   width="400"
@@ -143,14 +180,16 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
             <h4 class="font-bold uppercase text-primary text-lg mb-3">
               Tentang Saya
             </h4>
-            <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl">
+            <h2
+              class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white"
+            >
               Yuk, kenali saya lebih dekat!
             </h2>
             <p class="font-medium text-base text-secondary">
@@ -162,7 +201,7 @@
           </div>
           <div class="w-full px-4 lg:w-1/2">
             <h3
-              class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10"
+              class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white"
             >
               Hubungi Saya
             </h3>
@@ -317,7 +356,7 @@
     <!-- About Section End -->
 
     <!-- Portfolio Start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-200">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-200 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
@@ -326,7 +365,7 @@
               Portfolio
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
               Project Saya
             </h2>
@@ -346,7 +385,7 @@
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Landing Page Rekapan Data Aset
             </h3>
           </div>
@@ -354,7 +393,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/portfolio/2.png" alt="Dashboard" width="w-full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Dashboard Rekapan Data Aset
             </h3>
           </div>
@@ -362,7 +401,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/portfolio/3.png" alt="Grafik" width="w-full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Halaman Grafik Penyusutan Aset
             </h3>
           </div>
@@ -370,7 +409,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/portfolio/4.png" alt="Login" width="w-full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Halaman Login - Bootstrap 5
             </h3>
           </div>
@@ -382,7 +421,7 @@
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Sistem Informasi Biara SSpS Flores Timur
             </h3>
           </div>
@@ -394,7 +433,7 @@
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Aplikasi Herregistrasi Mahasiswa
             </h3>
           </div>
@@ -402,7 +441,7 @@
             <div class="rounded-md shadow-md overflow-hidden">
               <img src="dist/portfolio/8.png" alt="Login - 2" width="w-full" />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Halaman Login - Argon Dashboard
             </h3>
           </div>
@@ -414,7 +453,7 @@
                 width="w-full"
               />
             </div>
-            <h3 class="font-semibold text-xl text-dark mt-5">
+            <h3 class="font-semibold text-xl text-dark mt-5 dark:text-white">
               Data Pegawai - Architectui
             </h3>
           </div>
@@ -424,7 +463,7 @@
     <!-- Portfolio End -->
 
     <!-- Experience Start -->
-    <section id="experience" class="pt-36 pb-16">
+    <section id="experience" class="pt-36 pb-16 dark:bg-slate-300">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
@@ -432,7 +471,7 @@
               Experience
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark"
             >
               Pengalaman Dalam
             </h2>
@@ -449,7 +488,7 @@
             <a
               target="_blank"
               href="https://www.java.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/java.svg" width="60" alt="Java" />
@@ -457,7 +496,7 @@
             <a
               target="_blank"
               href="https://www.javascript.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -469,7 +508,7 @@
             <a
               target="_blank"
               href="https://www.php.net/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/php.svg" width="60" alt="PHP" />
@@ -477,7 +516,7 @@
             <a
               target="_blank"
               href="https://www.w3schools.com/html/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/html.svg" width="60" alt="HTML" />
@@ -485,7 +524,7 @@
             <a
               target="_blank"
               href="https://www.w3schools.com/css/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/css.svg" width="60" alt="CSS" />
@@ -493,7 +532,7 @@
             <a
               target="_blank"
               href="https://getbootstrap.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -505,7 +544,7 @@
             <a
               target="_blank"
               href="https://tailwindcss.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -517,7 +556,7 @@
             <a
               target="_blank"
               href="https://codeigniter.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -529,7 +568,7 @@
             <a
               target="_blank"
               href="https://laravel.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -541,7 +580,7 @@
             <a
               target="_blank"
               href="https://www.mysql.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/mysql.svg" width="60" alt="Mysql" />
@@ -549,7 +588,7 @@
             <a
               target="_blank"
               href="https://getcomposer.org/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img
@@ -561,7 +600,7 @@
             <a
               target="_blank"
               href="https://git-scm.com/"
-              class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
+              class="max-w-[120px] mx-4 py-4 grayscale dark:opacity-100 opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8"
             >
               <!-- <a href="#" class="max-w-[120px] mx-4 py-4"> -->
               <img src="dist/svg_experiance/git.svg" width="60" alt="Git" />
@@ -573,7 +612,7 @@
     <!-- Experience End -->
 
     <!-- Contact Start -->
-    <section id="contact" class="pt-36 pb-16 bg-slate-200">
+    <section id="contact" class="pt-36 pb-16 bg-slate-200 dark:bg-slate-800">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto text-center mb-16">
@@ -581,7 +620,7 @@
               Contact
             </h4>
             <h2
-              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl"
+              class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white"
             >
               Hubungi Saya
             </h2>
@@ -594,34 +633,44 @@
         <form action="">
           <div class="w-full lg:w-2/3 lg:mx-auto">
             <div class="w-full px-4 mb-8">
-              <label for="nama" class="text-base font-bold">Nama Lengkap</label>
+              <label for="nama" class="text-base font-bold dark:text-primary"
+                >Nama Lengkap</label
+              >
               <input
                 type="text"
                 id="nama"
                 name="nama"
                 autocomplete="off"
-                class="w-full text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
+                class="w-full mt-3 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               />
             </div>
             <div class="w-full px-4 mb-8">
-              <label for="email" class="text-base font-bold">Email</label>
+              <label
+                for="email"
+                class="text-base font-bold dark:text-primary mb-6"
+                >Email</label
+              >
               <input
                 type="email"
                 id="email"
                 name="email"
                 autocomplete="off"
-                class="w-full text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
+                class="w-full mt-3 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               />
             </div>
             <div class="w-full px-4 mb-5">
-              <label for="pesan" class="text-base font-bold">Pesan</label>
+              <label
+                for="pesan"
+                class="text-base font-bold dark:text-primary mb-6"
+                >Pesan</label
+              >
               <textarea
                 rows="6"
                 type="text"
                 id="pesan"
                 name="pesan"
                 autocomplete="off"
-                class="w-full h-32 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
+                class="w-full mt-3 h-32 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               ></textarea>
             </div>
             <div class="w-full px-4">
@@ -857,6 +906,16 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Tombol to the Top -->
+    <a
+      id="to-top"
+      href="#home"
+      class="fixed hidden hover:animate-pulse bottom-4 justify-center items-center right-4 z-[9999] h-14 w-14 rounded-xl p-4 bg-green-500"
+    >
+      <span class="block h-5 w-5 rotate-45 border-t-2 border-l-2 mt-3"></span
+    ></a>
+    <!-- Tombol to the Top End -->
 
     <script src="dist/js/script.js"></script>
   </body>

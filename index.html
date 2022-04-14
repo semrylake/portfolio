@@ -630,17 +630,28 @@
             </p>
           </div>
         </div>
-        <form action="">
+        <form action="" name="contact-form">
           <div class="w-full lg:w-2/3 lg:mx-auto">
+            <div class="w-full px-4 mb-8">
+              <div
+                class="p-4 notifikasi mb-4 text-sm text-white bg-green-500 hidden rounded-lg dark:bg-green-200 dark:text-green-800"
+                role="alert"
+              >
+                <span class="font-semibold text-base"
+                  >Pesan Anda berhasil dikirim. Terimakasih sudah menghubungi
+                  saya 😊</span
+                >
+              </div>
+            </div>
             <div class="w-full px-4 mb-8">
               <label for="nama" class="text-base font-bold dark:text-primary"
                 >Nama Lengkap</label
               >
               <input
+                required
                 type="text"
                 id="nama"
                 name="nama"
-                autocomplete="off"
                 class="w-full mt-3 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               />
             </div>
@@ -651,10 +662,10 @@
                 >Email</label
               >
               <input
+                required
                 type="email"
                 id="email"
                 name="email"
-                autocomplete="off"
                 class="w-full mt-3 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               />
             </div>
@@ -665,20 +676,380 @@
                 >Pesan</label
               >
               <textarea
+                required
                 rows="6"
                 type="text"
                 id="pesan"
                 name="pesan"
-                autocomplete="off"
                 class="w-full mt-3 h-32 text-dark p-3 rounded-xl focus:ring-primary focus:outline-none focus:ring-1 focus:border-primary"
               ></textarea>
             </div>
             <div class="w-full px-4">
               <button
                 type="submit"
-                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg duration-500 transition"
+                class="btn-kirim text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:opacity-80 hover:shadow-lg duration-500 transition"
               >
                 Kirim
+              </button>
+              <button
+                type="button"
+                class="... hidden btn-tunggu font-semibold rounded-full"
+                disabled
+              >
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  style="
+                    margin: auto;
+                    background: none;
+                    shape-rendering: auto;
+                    animation-play-state: running;
+                    animation-delay: 0s;
+                  "
+                  width="100px"
+                  height="100px"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="xMidYMid"
+                >
+                  <g
+                    transform="rotate(0 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#df1317"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.9166666666666666s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(30 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e4934b"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.8333333333333334s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(60 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e2bb8b"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.75s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(90 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e1e7e7"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.6666666666666666s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(120 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#91bcc6"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.5833333333333334s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(150 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#07abcc"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.5s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(180 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#0a69aa"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.4166666666666667s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(210 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#194645"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.3333333333333333s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(240 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#df1317"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.25s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(270 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e4934b"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.16666666666666666s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(300 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e2bb8b"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="-0.08333333333333333s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <g
+                    transform="rotate(330 50 50)"
+                    style="animation-play-state: running; animation-delay: 0s"
+                  >
+                    <rect
+                      x="47"
+                      y="24"
+                      rx="3"
+                      ry="6"
+                      width="6"
+                      height="12"
+                      fill="#e1e7e7"
+                      style="animation-play-state: running; animation-delay: 0s"
+                    >
+                      <animate
+                        attributeName="opacity"
+                        values="1;0"
+                        keyTimes="0;1"
+                        dur="1s"
+                        begin="0s"
+                        repeatCount="indefinite"
+                        style="
+                          animation-play-state: running;
+                          animation-delay: 0s;
+                        "
+                      ></animate>
+                    </rect>
+                  </g>
+                  <!-- [ldio] generated by https://loading.io/ -->
+                </svg>
               </button>
             </div>
           </div>
@@ -918,5 +1289,28 @@
     <!-- Tombol to the Top End -->
 
     <script src="dist/js/script.js"></script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbzAuC7q1KuhJoX29ATRmo0T53Ixo8O2kA86jfrXTFO5XrIV5mvwa4YQrHEidHc5kXsD/exec";
+      const form = document.forms["contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-tunggu");
+      const notifikasi = document.querySelector(".notifikasi");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        btnLoading.classList.toggle("hidden");
+        btnKirim.classList.toggle("hidden");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnLoading.classList.toggle("hidden");
+            btnKirim.classList.toggle("hidden");
+            notifikasi.classList.toggle("hidden");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
